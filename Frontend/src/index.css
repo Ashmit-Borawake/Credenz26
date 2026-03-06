@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&display=swap");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Swinging Wake";
+  src: url("./Font Styles/SwingingWake-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hanuman";
+  src: url("./Font Styles/Hanuman-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stranger Things";
+  src: url("./Font Styles/Benguiat Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stranger Things Outline";
+  src: url("./Font Styles/Stranger Things Outlined.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Toastify__toast {
+  --toastify-font-family: "Swinging Wake", sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.font-creepy {
+  font-family: "Creepster", cursive;
+  letter-spacing: 0.1em;
+}
+
+/* ===== Custom Scrollbar (Single White) ===== */
+
+/* Chrome, Edge, Safari */
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  /* ❌ removes grey track */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: white;
+  /* ✅ single white bar */
+  border-radius: 10px;
+}
+
+/* Firefox */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
+}
+
+/* ============================================================ */
+/* // for red bg2 for cards hover */
+.event-card {
+  background-image: var(--bg-normal);
+  background-size: cover;
+  background-position: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    scale 0.3s ease;
+}
+
+/* background-image swap */
+.event-card:hover {
+  background-image: var(--bg-hover);
+}
+
+/* ============================================================ */
+/* // Toaster */
+.rb-toast-success {
+  background: #0f0f0f !important;
+  color: #ff2e2e !important;
+  font-weight: 600;
+  letter-spacing: 2px;
+  box-shadow: 0 0 12px red !important;
+}
+
+.rb-toast-error {
+  background: #0f0f0f !important;
+  color: #ff0000 !important;
+  font-weight: 600;
+  letter-spacing: 2px;
+  box-shadow: 0 0 12px red !important;
+}
+
+.rb-toast {
+  background-color: black !important;
+  color: red !important;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 12px red;
+}
+.rb-toast-oss {
+  background: #0f0f0f !important;
+  color: #ffffff !important; /* 👈 white text */
+  font-weight: 600;
+  letter-spacing: 2px;
+  box-shadow: 0 0 12px red !important;
+}
+
+/* ============================================================ */
+/* animation for loading  */
+.loader {
+  width: 22px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side, #ef4444 94%, #0000) top/5px 5px no-repeat,
+    conic-gradient(#0000 30%, #ef4444);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
+  animation: l13 1s infinite linear;
+}
+
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+/* Fade in animation for drive black overlay*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum PassStatus {
+  PENDING
+  APPROVED
+  NONE
+}
+
+enum userType {
+  ADMIN
+  USER
+  SUBADMIN
+}
+
+model User {
+  id            String     @id @default(uuid())
+  username      String     @unique
+  firstName     String     @map("first_name")
+  lastName      String     @map("last_name")
+  email         String     @unique
+  phoneNumber   String     @unique @map("phone_number")
+  isJunior      Boolean    @default(true) @map("is_junior")
+  passStatus    PassStatus @default(NONE) @map("pass_status")
+  otp           String?
+  otpExpiration DateTime?  @map("otp_expiration")
+  password      String
+  collegeName   String     @default("PICT") @map("college_name")
+  profilePic    Int        @default(0) @map("profile_pic")
+  createdAt     DateTime   @default(now()) @map("created_at")
+  updatedAt     DateTime   @updatedAt @map("updated_at")
+  userType      userType   @default(USER) @map("user_type")
+
+  @@map("users")
+}
+
+enum EventType {
+  TECH
+  NON_TECH
+  PASS
+}
+
+model Event {
+  id          String    @id @default(uuid())
+  title       String    @unique
+  slug        String    @unique
+  type        EventType
+  price       Int
+  maxTeamSize Int       @default(0) @map("max_team_size")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  date        String    @default("10-10-2024") 
+  cartItems CartItem[]
+
+  orders Order[]
+
+  @@map("events")
+}
+
+model CartItem {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  teamname  String   @default("")
+  username1 String   @default("") @map("username_1")
+  username2 String?  @map("username_2")
+  username3 String?  @map("username_3")
+  username4 String?  @map("username_4")
+  eventSlug String   @map("event_slug")
+  event     Event    @relation(fields: [eventSlug], references: [slug])
+
+  @@map("cart_items")
+}
+
+model Order {
+  id            String   @id @default(uuid())
+  orderID       String   @map("order_id")
+  eventSlug     String   @map("event_slug")
+  teamname      String   @default("")
+  username1     String   @default("") @map("username_1")
+  username2     String?  @map("username_2")
+  username3     String?  @map("username_3")
+  username4     String?  @map("username_4")
+  transactionID String   @map("transaction_id")
+  actualPrice   Int      @default(0) @map("actual_price")
+  pricePaid     Int      @default(0) @map("price_paid")
+  isVerified    Boolean  @default(false) @map("is_verified")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  event Event @relation(fields: [eventSlug], references: [slug])
+
+  @@map("orders")
+}
+
+model Contact {
+  id          String   @id @default(uuid())
+  firstName   String   @map("first_name")
+  lastName    String   @map("last_name")
+  email       String
+  phoneNumber String?  @map("phone_number")
+  message     String   // required feedback text
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("contact")
+}
+
+//get all orders
+//approved an order -> send order confirmation email
+//delete an order 
+//quick register 

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "events" ADD COLUMN     "date" TEXT NOT NULL DEFAULT '10-10-2024';
