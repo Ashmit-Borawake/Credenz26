@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Three.js-WebGL-black?style=for-the-badge&logo=threedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Three.js-WebGL-black?style=for-the-badge&logo=three.js&logoColor=white" />
 </p>
 
 <p align="center">
@@ -25,7 +25,6 @@
 - 🛒 **Cart & Checkout System** — Add events to cart, checkout seamlessly, and receive confirmation
 - 🪪 **Digital Event Passes** — Auto-generated passes upon successful registration
 - 👤 **User Profiles** — Manage account details, view registered events and passes
-- 🛡️ **Admin Panel** — Role-based access control for event creation and management
 - 📧 **Email Notifications** — Automated emails via SMTP for OTP and registration confirmations
 - 🚀 **Performance Optimized** — Lazy-loaded routes, code splitting, Terser minification
 - 🛡️ **Production-Grade Security** — Helmet.js headers, CORS policy, rate limiting (100 req/15min)
@@ -66,9 +65,9 @@ Credenz26/
 │
 └── Backend/                # Express + TypeScript API
     ├── src/
-    │   ├── routes/         # auth, event, cart, pass, order, profile, admin, feedback
+    │   ├── routes/         # auth, event, cart, pass, order, profile, feedback
     │   ├── controllers/    # Business logic per route
-    │   ├── middlewares/    # JWT auth, role-based admin guard
+    │   ├── middlewares/    # JWT auth
     │   ├── utils/          # Email sender, OTP generator, helpers
     │   └── index.ts        # Entry point
     ├── prisma/             # Prisma schema & migrations
@@ -177,8 +176,6 @@ docker run -p 3000:3000 --env-file .env credenz-backend
 | `POST` | `/user/order` | Place order / checkout | 🔒 JWT |
 | `GET` | `/pass` | Get event pass | 🔒 JWT |
 | `GET` | `/profile` | Get user profile | 🔒 JWT |
-| `POST` | `/admin/login` | Admin login | Public |
-| `POST` | `/admin/event` | Create/manage events | 🔒 Admin |
 
 ---
 
@@ -206,7 +203,7 @@ docker run -p 3000:3000 --env-file .env credenz-backend
 
 - **Helmet.js** — Secure HTTP headers
 - **Rate Limiting** — 100 requests / 15 minutes per IP
-- **CORS** — Whitelisted origins only (`credenz.co.in`, admin panel, localhost)
+- **CORS** — Whitelisted origins only (`credenz.co.in`, localhost)
 - **JWT** — HttpOnly cookie-based token storage
 - **Bcrypt** — Password hashing with salt rounds
 - **Zod** — Request body schema validation
@@ -232,5 +229,5 @@ This project is proprietary software for Credenz, PICT. All rights reserved.
 ---
 
 <p align="center">
-  Made with 🔥 for <strong>Credenz</strong> — Where Passion Meets Technology
+  Made with ❤️ for <strong>Credenz</strong> — Where Passion Meets Technology
 </p>
