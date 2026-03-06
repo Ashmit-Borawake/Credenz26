@@ -1,5 +1,5 @@
-# Credenz 🔥⚡
-### Official Website of Credenz — PICT's Premier National-Level Tech Fest
+# Credenz'26 🔥⚡
+### Official Website for Credenz'26 — The Flagship Event of PICT IEEE Student Branch
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
@@ -215,18 +215,6 @@ docker run -p 3000:3000 --env-file .env credenz-backend
 ## 🚀 Deployment
 
 🌐 Visit the live site at **[credenz.co.in](https://credenz.co.in)**
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome from the Credenz Web Team!
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'feat: add your feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
 
 ---
 
