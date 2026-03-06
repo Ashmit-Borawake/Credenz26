@@ -8,10 +8,11 @@
   <img src="https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Three.js-WebGL-black?style=for-the-badge&logo=threedotjs&logoColor=white" />
 </p>
 
 <p align="center">
-  <strong>🌐 Live at <a href="https://credenz.co.in">credenz.co.in</a></strong>
+  <strong>🌐 Live at <a href="https://credenz.co.in" target="_blank">credenz.co.in</a></strong>
 </p>
 
 ---
