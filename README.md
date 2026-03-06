@@ -1,5 +1,5 @@
 # Credenz 🔥⚡
-### Official Website of Credenz — PCCOE's Premier National-Level Tech Fest
+### Official Website of Credenz — PICT's Premier National-Level Tech Fest
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
@@ -214,11 +214,7 @@ docker run -p 3000:3000 --env-file .env credenz-backend
 
 ## 🚀 Deployment
 
-| Service | Platform |
-|---|---|
-| Frontend | [Vercel](https://vercel.com) |
-| Backend | Docker container (self-hosted / cloud VM) |
-| Database | [Neon](https://neon.tech) (Serverless PostgreSQL) |
+🌐 Visit the live site at **[credenz.co.in](https://credenz.co.in)**
 
 ---
 
@@ -236,13 +232,13 @@ Contributions are welcome from the Credenz Web Team!
 
 ## 👥 Team
 
-Built with ❤️ by the **Credenz Web Team** — PCCOE
+Built with ❤️ by the **Credenz Web Team** — PICT
 
 ---
 
 ## 📄 License
 
-This project is proprietary software for Credenz, PCCOE. All rights reserved.
+This project is proprietary software for Credenz, PICT. All rights reserved.
 
 ---
 
