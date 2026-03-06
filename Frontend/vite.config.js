@@ -9,7 +9,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: 'https://mainweb.credenz.co.in',
-        target: "http://localhost:3000",
+        target: "http://localhost:3000", //For Locally Running It
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
